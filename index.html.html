@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOY 777 | Loja de Ovos de Páscoa</title>
+
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fffaf6;color:#333}
+
+header{
+background:linear-gradient(135deg,#2b0f05,#7a2d12);
+padding:25px;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+letter-spacing:3px
+}
+
+.logo span{color:#ffd700}
+
+.cart-btn{
+background:#ffd700;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer
+}
+
+.hero{
+background:linear-gradient(135deg,#ffb347,#ffd27f);
+padding:60px 20px;
+text-align:center
+}
+
+.hero h1{margin:0;font-size:36px}
+
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px
+}
+
+.card{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:.2s
+}
+
+.card:hover{transform:translateY(-6px)}
+
+.card img{width:100%;height:220px;object-fit:cover}
+
+.card h3{margin:12px}
+
+.desc{margin:0 12px 10px 12px;font-size:14px}
+
+.price{margin:0 12px;font-size:20px;font-weight:bold;color:#b94e13}
+
+.add{
+margin:15px;
+background:#25d366;
+border:none;
+padding:12px;
+width:calc(100% - 30px);
+border-radius:8px;
+font-weight:bold;
+color:white;
+cursor:pointer
+}
+
+.cart{
+position:fixed;
+right:-400px;
+top:0;
+width:320px;
+height:100%;
+background:white;
+box-shadow:-5px 0 20px rgba(0,0,0,0.15);
+padding:20px;
+transition:.3s;
+overflow:auto
+}
+
+.cart.open{right:0}
+
+.cart h2{margin-top:0}
+
+.cart-item{margin-bottom:10px;font-size:14px}
+
+.checkout{
+margin-top:20px;
+background:#25d366;
+border:none;
+width:100%;
+padding:14px;
+color:white;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer
+}
+
+.pix{
+margin-top:40px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+text-align:center
+}
+
+footer{
+margin-top:60px;
+background:#222;
+color:white;
+padding:25px;
+text-align:center
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">BOY <span>777</span></div>
+<button class="cart-btn" onclick="toggleCart()">🛒 Carrinho (<span id="cartCount">0</span>)</button>
+</header>
+
+<section class="hero">
+<h1>🍫 Ovos de Páscoa Artesanais Premium</h1>
+<p>Escolha seu sabor e faça seu pedido</p>
+</section>
+
+<div class="container">
+<h2>🥚 Sabores Mais Vendidos</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1612197526595-cb4a9a8e1c5d">
+<h3>Ovo Kinder</h3>
+<p class="desc">Chocolate ao leite com recheio cremoso estilo Kinder.</p>
+<div class="price">70</div>
+<button class="add" onclick="addCart('Ovo Kinder',70)">Adicionar ao carrinho</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c">
+<h3>Ovo Ninho com Nutella</h3>
+<p class="desc">Ovo super recheado com creme de leite ninho e Nutella.</p>
+<div class="price">75</div>
+<button class="add" onclick="addCart('Ovo Ninho com Nutella',75)">Adicionar ao carrinho</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60">
+<h3>Ovo Oreo</h3>
+<p class="desc">Chocolate ao leite com pedaços de Oreo.</p>
+<div class="price">65</div>
+<button class="add" onclick="addCart('Ovo Oreo',65)">Adicionar ao carrinho</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1590086782792-42dd2350140d">
+<h3>Ovo Ferrero</h3>
+<p class="desc">Chocolate com creme de avelã estilo Ferrero.</p>
+<div class="price">85</div>
+<button class="add" onclick="addCart('Ovo Ferrero',85)">Adicionar ao carrinho</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587135991058-8816c3e6c634">
+<h3>Ovo Gourmet</h3>
+<p class="desc">Casca recheada cremosa premium.</p>
+<div class="price">95</div>
+<button class="add" onclick="addCart('Ovo Gourmet',95)">Adicionar ao carrinho</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587248720327-8eb72564be1e">
+<h3>Ovo Tradicional</h3>
+<p class="desc">Clássico chocolate ao leite.</p>
+<div class="price">45</div>
+<button class="add" onclick="addCart('Ovo Tradicional',45)">Adicionar ao carrinho</button>
+</div>
+
+</div>
+
+<div class="pix">
+<h2>💳 Pagamento via Pix</h2>
+<p>Após finalizar o pedido pelo WhatsApp você receberá a chave Pix.</p>
+</div>
+
+</div>
+
+<div class="cart" id="cart">
+<h2>Seu Carrinho</h2>
+<div id="cartItems"></div>
+<h3>Total: R$ <span id="total">0</span></h3>
+<button class="checkout" onclick="checkout()">Finalizar no WhatsApp</button>
+</div>
+
+<footer>
+<p>© 2026 BOY 777 - Ovos de Páscoa Artesanais</p>
+</footer>
+
+<script>
+
+let cart=[]
+
+function toggleCart(){
+let c=document.getElementById('cart')
+c.classList.toggle('open')
+}
+
+function addCart(name,price){
+cart.push({name,price})
+renderCart()
+}
+
+function renderCart(){
+let items=document.getElementById('cartItems')
+let total=0
+items.innerHTML=''
+
+cart.forEach(p=>{
+items.innerHTML+=`<div class='cart-item'>${p.name} - R$ ${p.price}</div>`
+total+=p.price
+})
+
+document.getElementById('total').innerText=total
+
+document.getElementById('cartCount').innerText=cart.length
+}
+
+function checkout(){
+let text='Olá quero fazer o pedido:%0A'
+let total=0
+
+cart.forEach(p=>{
+text+=`- ${p.name} R$${p.price}%0A`
+total+=p.price
+})
+
+text+=`Total: R$${total}`
+
+window.open(`https://wa.me/5500000000000?text=${text}`)
+}
+
+</script>
+
+</body>
+</html>
